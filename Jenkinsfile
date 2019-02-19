@@ -1,9 +1,8 @@
 pipeline {
-  agent {
-    node {
-      label 'ubuntu-1604-aufs-stable'
+  agent any
+  tools { 
+        tool name: 'default', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 
     }
-  }
   stages {
     stage('Build result') {
       steps {
