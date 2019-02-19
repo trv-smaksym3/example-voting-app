@@ -1,8 +1,9 @@
 pipeline {
-  agent any
-  tools { 
-      org.jenkinsci.plugins.docker.commons.tools.DockerTool 'default'  
+  agent {
+    node {
+      label 'jnlpdocker'
     }
+  }
   stages {
     stage('Build result') {
       steps {
